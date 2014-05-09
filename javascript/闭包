@@ -1,0 +1,131 @@
+//此笔记原文来自http://miyuki.42code.com/2012/05/closures/#more-619
+
+//JS中，每件事物都是一个对象，当然包括函数（PS：这句话很重要，我在很多JS文章中都看到）
+
+//闭包
+	//什么是闭包：
+		//闭包就是拥有许多变量并且绑定这些变量的环境的表达式（函数），因而这些变量是表达式的一部分
+		//阮一峰的理解是：读取其他函数内部变量的函数。
+
+	//闭包由来:能关闭内容的方式而得名
+
+	outerMost = 'my'; //变量的存取从外到内：定义某个函数外的变量是可以被函数访问的
+	function useLess(name){
+		//console.log('Yes,' + outerMost + ' ' + 'name is' + ' ' +　name ); //Yes,my name is Lcm
+
+		var outerMost = 'Your',  //如果我们忽略这个变量，那么下面的console.log()返回的是Yes,my name is Lcm
+		    interFunc=function(){
+		    	var outerMost = 'Her';
+		    	console.log('Yes,' + outerMost + ' ' + 'name is' + ' ' +　name );
+		    };
+		    interFunc(); //Yes,His name is Lcm 
+		    console.log('Yes,' + outerMost + ' ' + 'name is' + ' ' +　name ); //Yes,Your name is Lcm
+
+	}
+	useLess('Lcm');
+
+	//一个闭包即一个函数对象
+	//上面的例子中，有个2个函数对象，分别是：useLess();和interFunc();
+	
+
+	//一个闭包拥有他自己的作用域
+	//变量不能从内到外读取：就如放在innerFunc()中的变量outerMost不能被其外部的函数访问到。
+
+
+	//JS的词法作用域:变量的作用域是在定义的时候决定的，而不是执行的时候决定的。也就是词法作用域取决于源码，跟函数调用的什么木有关系。
+
+
+	//哈哈，为什么使用闭包，@张小雪的博客里说，为了隐私！
+	//闭包是将你的代码在公共环境中隐藏的一种方式。通过闭包，你可以简单地创建与外界隔离的私有成员
+
+	(function(exports){    //匿名函数
+		function mycode(num,num2){  //这是个嵌入函数，它仅仅存在于闭包的作用域内，所以我们能在作用域内任意的使用它
+			return num * num2;      //同时也仅仅只能在这个匿名函数的作用域内使用
+		}
+
+		exports.publicCode = function(num1,num2){  //将私有方法曝露为公有方法，我的理解就是，通过父对象的变量或是this
+			console.log(mycode(num1,num2));        //使父对象中的私有成员让外界访问到
+		};
+	})(window);
+
+	publicCode(3,5);  //15
+	mycode(3,5);  //私有方法，只能在匿名函数中的作用域中使用 Uncaught ReferenceError: mycode is not defined 
+
+	//注：哈哈，终于搞清楚以下2种的区别了
+		//(function(){}());---->这是即时函数
+		//(function(){})(); --->这是匿名函数的调用
+
+	//使用闭包进行元编程
+	var KeyMap = {
+		"Enter" : 13,
+		"Shift" : 16,
+		"Tab" : 9,
+		"LeftArrow" : '37'
+	};
+
+	var txtInput = document.getElementById('myTextInput');
+	txtInput.onkeypress = function(e){
+		var code = e.keyCode || e.which;
+
+		if(code === KeyMap.Enter){
+			console.log(txtInput.value);
+		}
+	}
+
+	//及时的捕获一个时刻
+	for(var key in KeyMap){
+		KeyMap['is' + key] = (function(compare){
+			return function(ev){
+				var code = ev.keyCode || ev.which;
+				return code === compare;
+			};
+		})(KeyMap[key]);
+	}
+	//使用闭包来扩展语言
+	Function.prototype.cached = function(){
+		var self = this,
+			cached = {};
+
+			return function(args){
+				if(args in cached){
+					return cached[args];
+				}
+				return cached[args] = self[args];
+			};
+	};
+
+	//闭包在外界的使用
+	 	//jQuery
+	 	(function($){
+	 		$(document).ready(function(){
+	 			//.......
+	 		});
+	 	})(jQuery);
+
+	 	//Backbone.js
+	 	(function(exports){
+	 		var Product = Backbone.Model.extend({
+	 			urlRoot : '/Products',
+	 		});
+	 		var ProductList = Backbone.Collection.extend({
+	 			url : '/products',
+	 			model : Product
+	 		});
+	 		var Products = new ProductList;
+	 		var ShoppingCartView = Backbone.View.extend({
+	 			addProduct : function(product, opts){
+	 				return CartItems.creat(product, opts);
+	 			},
+	 			removeProduct : function(product, opts){
+	 				Products.remove(product, opts);
+	 			},
+	 			getProduct : function(productId){
+	 				return Products.get(productId);
+	 			},
+	 			getProducts : function(){
+	 				return Products.models;
+	 			}
+	 		});
+
+	 		exports.ShoppingCart = new ShoppingCartView;
+	 	})(window);
