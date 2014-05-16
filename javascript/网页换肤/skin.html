@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<title>网页换肤</title>
+	<link rel="stylesheet" href="css/green.css">
+	<style>
+		li{
+			margin-right: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			list-style: none;
+		}
+		#main{
+			width: 500px;
+			margin: 0 auto;
+		}
+		#skin {
+			height: 30px;
+		}
+		#skin li{
+			float: left;
+			width: 25px;
+			height: 25px;
+			cursor: pointer;
+		}
+		#green {
+			background: green;
+		}
+		#pink {
+			background: pink;
+		}
+		#blue {
+			background: blue;
+		}
+		#content{
+			width: 100%;
+			margin: 0 auto;
+			clear: both;
+		}
+		#content li{
+			float: left;
+			padding: 10px 20px;
+			color: #fff;
+		}
+		.current {
+			border: 2px solid #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<ul id="skin">
+			<li class="current" id="green"></li>
+			<li id="pink"></li>
+			<li id="blue"></li>
+		</ul>
+
+		<ul id="content">
+			<li>item1</li>
+			<li>item2</li>
+			<li>item3</li>
+		</ul>
+	</div>
+
+	<script>
+		window.onload = function() {
+			var i = 0,
+				link = document.getElementsByTagName('link')[0],
+				liId = document.getElementById('skin').getElementsByTagName('li');
+
+			for(i; i < liId.length; i++) {
+				liId[i].onclick = function() {
+					for(var p in liId) {
+						liId[p].className = '';
+						this.className = 'current';
+						link.href = 'css/' + this.id + '.css';
+					}
+				};
+			}
+
+		};
+	</script>
+</body>
+</html>

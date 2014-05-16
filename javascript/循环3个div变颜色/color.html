@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<title>循环3个div变颜色</title>
+	<style>
+		.main {
+			width: 500px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.main p {
+			float: left;
+			width: 100px;
+			height: 100px;
+			margin-left: 20px;
+			background: green;
+		}
+		.main .red {
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<button id="js-change">点击改变3个div的颜色</button>
+
+		<div class="useLess">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</div>
+
+	<script>
+		window.onload = function() {
+			var useDiv = document.getElementsByTagName('p'),
+				useBtn = document.getElementById('js-change');
+			// for(var i = 0; i < useDiv.length; i++) {
+			// 	useBtn.onclick = function() {
+			// 		// useDiv[i].className = 'red';
+			// 		console.log(123);
+			// 	};
+			// }
+
+			useBtn.onclick = function() {
+				for(var i = 0; i < useDiv.length; i++) {
+					useDiv[i].className = 'red';
+				}
+			};
+
+		};
+	</script>
+</body>
+</html>

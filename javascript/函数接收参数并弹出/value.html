@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-Edge">
+	<title>函数接收参数并弹出</title>
+	<style>
+		.main {
+			width: 500px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.main input {
+			width: 300px;
+			height: 30px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<p><input type="text" placeholder="username"></p>
+		<p><input type="password" placeholder="password"></p>
+		<p><button>点击获取参数</button></p>
+	</div>
+
+	<script>
+		var useLess = function(a, b) {
+			alert(a.value);
+			alert(b.value);
+		};
+
+		window.onload = function() {
+			var useTab = document.getElementsByTagName('input'),
+				useBtn = document.getElementsByTagName('button')[0];
+			useBtn.onclick = function() {
+				useLess(useTab[0], useTab[1]);
+			};
+		};
+	</script>
+</body>
+</html>
