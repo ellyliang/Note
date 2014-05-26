@@ -8,7 +8,7 @@
 
 ＃＃＃不推荐浏览器端的使用方法！！！！
 
-![don't recommend](/images/browser.png)
+![don't recommend](images/browser.png)
 
 你用less浏览器端的使用方法了吗？用了！好吧，建议你换其他的编译方法，或是使用第三方编译工具。
 
