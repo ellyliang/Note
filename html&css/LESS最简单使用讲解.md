@@ -2,263 +2,96 @@
 
 写这篇讲解的缘由是想帮助一开始接触less,不知道怎么使用less的童鞋，这里只讲解最简单的使用方法，至于那些啥么sublime less2css, grunt-less编译工具等等，这里不讲解, 这里只用koala。初学者建议先使用koala，之后再用其他工具。好吧，以下是简单且快捷的使用方法：
 
-- __了解，学习。LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)__
+＃＃＃了解，学习。LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)
 
 刚开始接触LESS,总要先去官网学习和了解LESS吧，不然去群里边问，别人跟你讲解你也觉得模糊。千万记得，自己要动手试试！哈哈哈.......
 
-- __不推荐浏览器端的使用方法！！！！__
-哈哈，你也看到
+＃＃＃不推荐浏览器端的使用方法！！！！
+
+![don't recommend](../images/browser.png)
+
+你用less浏览器端的使用方法了吗？用了！好吧，建议你换其他的编译方法，或是使用第三方编译工具。
+
+至于为什么不推荐，官方的说法是：
+
+> 在客户端使用 Less.js 是最容易的方式，并且在开发阶段很方便，但是，在生产环境中，性能和可靠性非常重要，我们建议最好使用 node.js 或其它第三方工具进行预编译。
+
+＃＃＃本文重点：用koala编译less文件，在页面中引入编译好的css文件（ps:亲，koala可以实时编译哦！）
+
+>首先下载[koala](http://koala-app.com/index-zh.html)
+> > 然后安装。。。。。
+
 ```html
-	<img src="xxx.jpg" alt="">
+test/
+├── styles/
+│   ├── useLess.less
+└── index.html
 ```
 
-- __HTML语言属性__
-
-强烈建议在html根元素指定lang属性，从而为文档设置正确的语言。
-好处： 有助于语音合成工具确定其所应该采取的发音，有助于翻译工具确定其翻译时所应遵守的规则等等。
-
-> - [更多知识参考这里]（https://github.com/basecss/Lab/edit/master/docs/simple-guide-for-template.md）
-> - [语言代码表]（http://www.sitepoint.com/web-foundations/iso-2-letter-language-codes/）
+koala变异后：
 
 ```html
-	<html lang="zh-cmn-Hans">
-		<!-- 简体中文 -->
-	</html>
-
-	<html lang="zh-cmn-Hant">
-		<!-- 繁体中文 -->
-	</html>
+test/
+├── styles/
+│   ├── useLess.less
+│    ├── useLess.css
+└── index.html
 ```
-
-- __HTML-IE兼容模式__
-
-IE支持通过特定的<meta>标签来确定绘制当前页面所应该采用的IE版本。
-
-> － [更多知识](http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e)
+> 将项目中的Styles文件夹移到koala中,
+> > 在koala中选上自动编译和压缩方式,
+> > > 之后在编辑器中编写less，然后保存,
+> > > > 你就会发现项目的样式文件夹中多了个.css文件，然后将.css文件引入到页面中（这个可以一开始就在页面中引入.css文件），继续编写less。
 
 ```html
-<meta http-equiv="X-UA-Compatible" content="IE-Edge">
-```
-
-- __字符编码__
-
-声明字符编码，能够确保浏览器快速判断页面内容的渲染方式，一般采用utf-8编码。
-
-好处：可以避免在html中使用字符实体标记，从而全部与文档编码一致
-
-```html
+<!doctype html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<title>less</title>
+	<link rel="stylesheet" href="css/useless.css">
 </head>
+<body>
+	<a href="http://www.lesscss.net">我喜欢的颜色是红色</a>
+</body>
+</html>
 ```
-
-- __HTML-引入css和js文件__
-
-根据html5规范，在引入css和js文件时，不需要type属性，因为`text/css`和`text/javascript`分别是他们的默认值。
-
-```html
-<style src="xxx.css"></style>
-<script src="xxx.js"></script>
-```	
-
-- __HTML-实用为王__
-
-尽量遵循html标准和语义，但不要以牺牲实用性为代价。任何时候都要尽量使用最少的标签并保持最小的复杂度。
-
-- __HTML-属性顺序__
-
-ps：我觉得这个很有用，对代码的易读性。
-
-属性顺序应该遵循以下规则：
-
-> - `class`
-> - `id`, `name`
-> - `data-*`
-> - `src`, `for`, `type`, `href`
-> - `title`, `alt`
-> - `araia-*`, `role`
-
-```html
-<input class="" id="" name="" data-name="" type="text" value="">
-<a class="" id="" data-url="" href="" title=""></a>
-<img class="" id="" data-img="" src="" alt="">
-```
-
-- __HTML-布尔型属性__
-
-xhtml规范要求要赋值，但是html5中不需要赋值。
-
-note：元素布尔型属性如果有值，就是true，否则就是false，ps:这个是正对html5说明的。
-
-```html
-<input type="text" disabled><!-- html5 -->
-<input type="text" disabled="disabled"><!-- xhtml -->
-```
-
-- __HMTL-减少标签的数量__
-
-编写html时，尽量避免多余的父元素。
-
-```html
-<!-- bad -->
-<span><img src="" alt=""></span>
-
-<!--better-->
-<img src="" alt="">
-```
-
-- __HTML-JS生成的标签__
-
-通过js生成的标签让内容变得不易查找，编辑，并且降低性能。能避免则避免。
-
-－ __CSS语法规范__
-
-> - 为了代码的易读性，在每个声明块的左花括号前添加一个空格；
-> - 每条声明语句的`：`后应该插入一个空格；
-> - 所有声明语句都应当以分号结尾；
-> - 属性值或颜色参数，省略小于1的小数面的0，如：`0.5px`->`.5px`；
-> - 十六进制值应该全部小写，如：`#fff`.ps：小写易于分辨，形式更易于区分；
-> - 尽量使用简写的十六进制值，如：`＃ffffff` -> `#fff`;
-> - 避免为0指定单位，如：`padding:0px` -> `padding:0`;
 
 ```css
-.useless {
-	width: 100%;
-	margin: .5px;
-	padding: 0;
-	color: #fff;
+@fontColor: white;
+@bgColor: red;
+
+body {
+	background: @bgColor;
+}
+a {
+	color : @fontColor;
+	&:hover {
+		text-decoration:none;
+        }
 }
 ```
 
-－ __CSS声明顺序__
-
-声明顺序如下：
-
-> - position
-> - box model
-> - typographic
-> - visual
+koala编译后
 
 ```css
-.useless {
-	/* position */
-	position: relative;
-	top: 0;
-	left: 0;
-
-	/* box model */
-	display: block;
-	float: left;
-	width: 100%;
-	height: 100%;
-
-	/* typographic */
-	color: #fff;
-	font-size: 14px;
-
-	/* visual */
-	border: 1px solid #000;
-	background-color: #ccc;
-
-	/* misc */
-	opacity: 1;
+body {
+  background: #ff0000;
+}
+a {
+  color: #ffffff;
+}
+a:hover {
+  text-decoration: none;
 }
 ```
 
-- __CSS简写形式的属性声明__
+还是不明白我在说什么是吗。。。看图！
 
-应当尽量限制使用简写形式的属性声明。因为过度使用简写形式的属性声明会导致导致代码混乱，且对属性值带来不必要的覆盖从而引起的副作用。
+![how to use KOALA](../images/koala2.gif)
 
-```css
-.useless {
-	/* bad */
-	margin: 0 0 0 110px;
+NOTE:如果想设置话，在koala的那个齿轮里边设置语言，压缩方式等等，自己随便点下就懂了，哈哈哈哈。。。
 
-	/* better */
-	margin-left: 110px;
-}
-```
+好了，看完这里之后，可以去LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)看教程了，跟着里面边练边学，如果之后自己不想用koala编译，再去折腾折腾其他的编译方式，完全取决于自己的兴趣和习惯，哈哈哈哈哈。。。。。
 
-- __CSS-class命名__
-
-> - class名称中只能出现小写字符和破折号（不是下划线，也不是驼峰命名法），如：`.btn-danger`;
-> - 避免过度任意的简写；
-> - class名称应当尽可能短，并且意义明确；
-> - 使用有意义的名称，使用有组织的或明确的名称，不要使用表现形式的名称；
-> - 基于最近的父class或基于class作为新class的前缀；
-> - 使用`.js-*`class来标识行为，并且不要将这些class包含到css文件中。
-
-```html
-<section class="useless">
-	<p class="useless-title"></p>
-	<article class="useless-content">
-		<ul class="useless-list">
-			<li class="useless-list-item"></li>
-		</ul>
-		<input class="btn-primary" id="js-btn" type="button" >
-	</article>
-</section>
-```
-
-- __Class选择器__
-
-> - 对于通用元素使用class，有利于渲染性能的优化；
-> - 对于经常出现的组件，避免使用属性选择器，如：[class^="xxx"]。因为浏览器的性能会受到这些因素的影响；
-> - 选择器尽可能短，并且尽量限制组成选择器的元素个数，建议不超过3；
-> - 只有在必要的时候才将class限制在最近的父元素内。
-
-－ __代码组织__
-
-> - 以组件为单位组织代码；
-> - 制定一致的注释规范；
-> - 使用一致的空白符将代码分隔成块，这样有利于扫描较大的文档；
-> - 如果使用多个css文件，将其按照组件而非页面的形式分拆，因为页面会被重组，而组件只会被移动。
-
-ps: 上面的html规范主要是针对html5的规范来讲的。
-
-
-以上是我看的关于规范的笔记，在接下来的工作里，我会按照这个规范去执行，当然，边执行边改善，参考更多的规范，让自己的代码写的更好些！
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+如果文中有什么不对的地方，欢迎各位大神的知道，偶只是一名前端菜鸟！哈哈哈哈。。。。。。
 
