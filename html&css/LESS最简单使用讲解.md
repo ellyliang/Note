@@ -87,7 +87,7 @@ a:hover {
 
 还是不明白我在说什么是吗。。。看图！
 
-![how to use KOALA](images/koala2.gif)
+![how to use KOALA](images/koala.gif)
 
 NOTE:如果想设置话，在koala的那个齿轮里边设置语言，压缩方式等等，自己随便点下就懂了，哈哈哈哈。。。
 
