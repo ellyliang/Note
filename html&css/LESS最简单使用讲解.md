@@ -2,13 +2,13 @@
 
 写这篇讲解的缘由是想帮助一开始接触less,不知道怎么使用less的童鞋，这里只讲解最简单的使用方法，至于那些啥么sublime less2css, grunt-less编译工具等等，这里不讲解, 这里只用koala。初学者建议先使用koala，之后再用其他工具。好吧，以下是简单且快捷的使用方法：
 
-＃＃＃了解，学习。LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)
+###了解，学习。LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)
 
 刚开始接触LESS,总要先去官网学习和了解LESS吧，不然去群里边问，别人跟你讲解你也觉得模糊。千万记得，自己要动手试试！哈哈哈.......
 
 ＃＃＃不推荐浏览器端的使用方法！！！！
 
-![don't recommend](../images/browser.png)
+![don't recommend](/images/browser.png)
 
 你用less浏览器端的使用方法了吗？用了！好吧，建议你换其他的编译方法，或是使用第三方编译工具。
 
@@ -16,7 +16,7 @@
 
 > 在客户端使用 Less.js 是最容易的方式，并且在开发阶段很方便，但是，在生产环境中，性能和可靠性非常重要，我们建议最好使用 node.js 或其它第三方工具进行预编译。
 
-＃＃＃本文重点：用koala编译less文件，在页面中引入编译好的css文件（ps:亲，koala可以实时编译哦！）
+###本文重点：用koala编译less文件，在页面中引入编译好的css文件（ps:亲，koala可以实时编译哦！）
 
 >首先下载[koala](http://koala-app.com/index-zh.html)
 > > 然后安装。。。。。
@@ -67,7 +67,7 @@ a {
 	color : @fontColor;
 	&:hover {
 		text-decoration:none;
-        }
+    }
 }
 ```
 
@@ -87,7 +87,7 @@ a:hover {
 
 还是不明白我在说什么是吗。。。看图！
 
-![how to use KOALA](../images/koala2.gif)
+![how to use KOALA](/images/koala2.gif)
 
 NOTE:如果想设置话，在koala的那个齿轮里边设置语言，压缩方式等等，自己随便点下就懂了，哈哈哈哈。。。
 
