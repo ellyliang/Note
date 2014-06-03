@@ -1,6 +1,6 @@
 #LESS最初使用篇（配图讲解）
 
-写这篇讲解的缘由是想帮助一开始接触less,不知道怎么使用less的童鞋，这里只讲解最简单的使用方法，至于那些啥么sublime less2css, grunt-less编译工具等等，这里不讲解, 这里只用koala。初学者建议先使用koala，之后再用其他工具。好吧，以下是简单且快捷的使用方法：
+写这篇文章的缘由是想帮助一开始接触less,不知道怎么使用less的童鞋，这里只讲解最简单的使用方法，至于那些啥么sublime less2css, grunt-less编译工具等等，这里不讲解, 这里只用koala。初学者建议先使用koala，之后再用其他工具。好吧，以下是简单且快捷的使用方法：
 
 ###了解，学习。LESS中国官网: [http://www.lesscss.net](http://www.lesscss.net)
 
@@ -87,7 +87,7 @@ a:hover {
 
 还是不明白我在说什么是吗。。。看图！
 
-![how to use KOALA](images/koala2.gif)
+![how to use KOALA](images/koala.gif)
 
 NOTE:如果想设置话，在koala的那个齿轮里边设置语言，压缩方式等等，自己随便点下就懂了，哈哈哈哈。。。
 
