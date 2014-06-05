@@ -16,6 +16,8 @@
 
 > 在客户端使用 Less.js 是最容易的方式，并且在开发阶段很方便，但是，在生产环境中，性能和可靠性非常重要，我们建议最好使用 node.js 或其它第三方工具进行预编译。
 
+##LESS使用方法
+
 ###本文重点：用koala编译less文件，在页面中引入编译好的css文件（ps:亲，koala可以实时编译哦！）
 
 >首先下载[koala](http://koala-app.com/index-zh.html)
@@ -28,7 +30,7 @@ test/
 └── index.html
 ```
 
-koala变异后：
+koala编译后：
 
 ```html
 test/
