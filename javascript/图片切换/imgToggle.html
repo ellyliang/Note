@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换</title>
+	<style>
+		body,
+		html {
+			background: green;
+		}
+		body, ul, li, a {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		#contain {
+			width: 90%;
+			margin: 0 auto;
+		}
+		#contain li {
+			display: inline-block;
+			vertical-align: top;
+		}
+		#contain li img {
+			max-width: 100px;
+			border: 5px solid pink;
+			border-radius: 3px;
+		}
+		#show {
+			position: relative;
+			width: 50%;
+			height: 40%;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		#show img {
+			max-width: 80%;
+			max-height: 80%;
+			margin-bottom: 10px;  
+			border: 5px solid pink;
+			border-radius: 5px;
+		}
+		#show div {
+			position: absolute;
+			top: 1%;
+			left: 25%;
+			width: 50%;
+			height: 90%;
+			display:none;
+			background: url(images/loading.gif) 50% 50% no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="show"><img src="images/small18.jpg" alt=""><div></div></div>
+	<ul id="contain">
+		<li><a href="javascripr:;"><img src="images/small18.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small7.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small8.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small9.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small10.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small12.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small15.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small16.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small18.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small19.jpg" alt=""></a></li>
+		<li><a href="javascripr:;"><img src="images/small12.jpg" alt=""></a></li>
+	</ul>
+
+	<script>
+		window.onload = function() {
+			var imgNum = document.getElementById('contain').getElementsByTagName('img'),
+				bgLoad = document.getElementById('show').getElementsByTagName('div')[0],
+				firstImg = document.getElementById('show').getElementsByTagName('img');
+
+			for(var i = 1; i < imgNum.length; i++) {
+				imgNum[i].onmouseover = function() {
+					var img = new Image();
+					img.src = firstImg[0].src = this.src.replace(/small/, 'big');
+					bgLoad.style.display = 'block';
+					img.complete ? bgLoad.style.display = 'none' : (firstImg[0].onload = function() { bgLoad.style.display = 'none'});
+				};
+			}
+
+		};
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
