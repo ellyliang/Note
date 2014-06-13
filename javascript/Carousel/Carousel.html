@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			list-style: none;
+		}
+		#main {
+			position: relative;
+			width: 408px;
+			height: 544px;
+			margin: 0 auto;
+			overflow: hidden;
+		}
+		#carousel {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 45000px;
+			overflow: hidden;
+		}
+		.carousel-box {
+			width: 408px;
+			height: 544px;
+			float: left;
+		}
+		.carousel-box img {
+			width: 408px;
+			height: 544px;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			overflow: hidden;
+		}
+		.carousel-dot {
+			position: absolute;
+			left: 30%;
+			bottom: -2%;
+			width: 200px;
+			height: 22px;
+		}
+		.carousel-dot .dot-item {
+			width: 18px;
+			height: 16px;
+			margin-right: 8px;
+			float: left;
+			cursor: pointer;
+			background: url(images/dot.png) 0 -16px;
+		}
+		.carousel-dot .current {
+			background: url(images/dot.png) 0 0;
+		}
+		.carousel-guide {
+			position: absolute;
+			top: 40%;
+			display: none;
+			width: 60px;
+			height: 90px;
+			cursor: pointer;
+		}
+		.carousel-prev {
+			left: 0;
+			background: url(images/ad_ctr.png) 0 0 no-repeat;
+		}
+		.carousel-next {
+			right: 0;
+			background: url(images/ad_ctr.png) 0 -90px no-repeat;
+		}
+	</style>		
+</head>
+<body>
+	<div id="main">
+		<div id="carousel">
+			<div class="carousel-box"><img src="images/img1.jpg" alt=""></div>
+			<div class="carousel-box"><img src="images/img2.jpg" alt=""></div>
+			<div class="carousel-box"><img src="images/img3.jpg" alt=""></div>
+		</div>
+		<ul class="carousel-dot">
+			<li class="dot-item current" id="carousel-dot-item1" value="1"></li>
+			<li class="dot-item" id="carousel-dot-item2" value="2"></li>
+			<li class="dot-item" id="carousel-dot-item3" value="3"></li>
+		</ul>
+		<div class="carousel-prev carousel-guide"></div>
+		<div class="carousel-next carousel-guide"></div>
+	</div>
+	<script src="jquery.js"></script>
+	<script>
+	$(function() {
+		var i = 0,
+			n,
+			m;
+		$('#main').hover(function() {
+			$('.carousel-guide').show();
+		}, function() {
+			$('.carousel-guide').hide();
+		});
+
+		function autodo() {
+			i++;
+			if(i > 3) {
+				i = 1;
+			}
+			dot(i);
+		}
+
+		autoCarousel = setInterval(autodo, 1500);
+
+		$('.dot-item').hover(function() {
+			i = $(this).val();
+			dot(i);
+			clearTimeout(autoCarousel);
+		}, function(){
+			autoCarousel = setInterval(autodo, 1500);
+		});
+
+		$('.carousel-next').click(function() {
+			i ++;
+			if(i > 3) {
+				i = 1;
+			}
+			clearTimeout(autoCarousel);
+			n = 1;
+			if(n = 1) {
+				autoCarousel = setInterval(autodo, 1500);
+			}
+			dot(i);
+		});
+
+		$('.carousel-prev').click(function() {
+			i --;
+			if(i < 1) {
+				i = 3;
+			}
+			clearTimeout(autoCarousel);
+			n = 1;
+			if(n = 1) {
+				autoCarousel = setInterval(autodo, 1500);
+			}
+			dot(i);
+		});
+	});
+
+	function dot(i) {
+		m = -408 * (i - 1);
+		$('.dot-item').removeClass('current');
+		$('#carousel-dot-item' + i).addClass('current');
+		$('#carousel').stop(true, true).animate({"left" : m + "px"}, 700);
+	}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
