@@ -10,17 +10,17 @@ tranform笔记
 > - <transform-function>:表示一个或多个变换函数，以空格分开，so可以同时对一个元素进行transform的多种属性操作。
 
 > - 1.rotate(360deg) ---- 旋转
-    > 2.translate(x, y) ---- 移动（水平方向，垂直方向）; PS: `translate(100px, 30px)`
-    > translateX(x) ---- 仅水平方向移动
-    > translateY(y) ---- 仅垂直方向移动
-    > 3.scale(x, y) ---- 缩放（水平缩放，垂直缩放）PS：`scale(2, 1.5)`
-    > 4.skew(x, y) ---- 扭曲（水平扭曲，垂直扭曲）PS：`skew(30deg, 10deg)`
-    > 5.matrix(a, b, c, d, e, f)
+> - 2.translate(x, y) ---- 移动（水平方向，垂直方向）; PS: `translate(100px, 30px)`
+> - translateX(x) ---- 仅水平方向移动
+> - translateY(y) ---- 仅垂直方向移动
+> - 3.scale(x, y) ---- 缩放（水平缩放，垂直缩放）PS：`scale(2, 1.5)`
+> - 4.skew(x, y) ---- 扭曲（水平扭曲，垂直扭曲）PS：`skew(30deg, 10deg)`
+> - 5.matrix(a, b, c, d, e, f)
 > - 改变元素的基点`transform-origin`
      > 例子：
-            > `transform-origin: (left, top)`
-            > `transform-origin: right`
-            > `transform-origin(25%, 75%)`
+            > - `transform-origin: (left, top)`
+            > - `transform-origin: right`
+            > - `transform-origin(25%, 75%)`
 
 ###实例：
 
