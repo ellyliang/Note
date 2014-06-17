@@ -10,7 +10,6 @@
 			background: #66cd99;
 			overflow: hidden;
 		}
-
 		@keyframes snailRun {
 			from {
 				right: 0;
@@ -19,7 +18,6 @@
 				left: -100px;
 			}
 		}
-
 		/*firefox*/
 		@-moz-keyframes snailRun {
 			from {
@@ -29,7 +27,6 @@
 				left: 100px;
 			}
 		}
-
 		/*chrome*/
 		@-webkit-keyframes snailRun {
 			from {
@@ -39,7 +36,6 @@
 				left: -100px;
 			}
 		}
-
 		/*opera*/
 		@-o-keyframes snailRun {
 			from {
@@ -50,12 +46,6 @@
 			}
 		}
 		.snail {
-			-webkit-animation: 25s linear infinite snailRun;
-			   -moz-animation: 25s linear infinite snailRun;
-			     -o-animation: 25s linear infinite snailRun;
-			        animation: 25s linear infinite snailRun;
-		}
-		.snail {
 			position: relative;
 			left: 1500px;
 			width: 100px;
@@ -64,6 +54,10 @@
 			border-radius: 50%;
 			box-shadow: 0px 0px 0 2px #666;
 			background: #fe9b00;
+			-webkit-animation: 25s linear infinite snailRun;
+			   -moz-animation: 25s linear infinite snailRun;
+			     -o-animation: 25s linear infinite snailRun;
+			        animation: 25s linear infinite snailRun;
 		}
 		.snail:before {
 			content: '';
