@@ -1,4 +1,4 @@
-tranform笔记
+transform笔记
 =======
 > - transform: none| <transform-function>[<transform-function>]*;
 > - transform属性能对元素对象进行变形操作;
