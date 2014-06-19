@@ -1,9 +1,9 @@
 transition
 ==========
 
-> transition呈现的是一种过渡。PS：就是一种动画转换过程，如渐显、渐弱、动画快慢等。
-> transition可以和transform同时使用。
-> transition是复合属性。PS：如下：
+> * transition呈现的是一种过渡。PS：就是一种动画转换过程，如渐显、渐弱、动画快慢等。
+> * transition可以和transform同时使用。
+> * transition是复合属性。PS：如下：
 
 ###transition属性
 > - transition-property [过渡css属性]
