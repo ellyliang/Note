@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>长的很丑的蜗牛～哈哈哈哈哈哈哈</title>
+	<style>
+		body {
+			background: #66cd99;
+		}
+
+		@keyframes snailRun {
+			from {
+				right: 0;
+			}
+			to {
+				left: -100px;
+			}
+		}
+
+		/*firefox*/
+		@-moz-keyframes snailRun {
+			from {
+				right: 0;
+			}
+			to {
+				left: 100px;
+			}
+		}
+
+		/*chrome*/
+		@-webkit-keyframes snailRun {
+			from {
+				right: 0;
+			}
+			to {
+				left: -100px;
+			}
+		}
+
+		/*opera*/
+		@-o-keyframes snailRun {
+			from {
+				right: 0;
+			}
+			to {
+				left: -100px;
+			}
+		}
+		.snail {
+			-webkit-animation: 25s linear infinite snailRun;
+			   -moz-animation: 25s linear infinite snailRun;
+			     -o-animation: 25s linear infinite snailRun;
+			        animation: 25s linear infinite snailRun;
+		}
+
+		.snail {
+			position: relative;
+			left: 1600px;
+			width: 100px;
+			height: 100px;
+			margin-top: 300px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0 2px #666, -70px -8px 0 -47px #000, -100px 1px 0 -47px #000;
+			background: #fe9b00;
+			z-index: 99999;
+		}
+		.snail:before {
+			content: '';
+			position: absolute;
+			left: 16%;
+			top: 16%;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0 2px #666;
+			background: #fe9b00;
+		}
+		.snail:after {
+			content: '';
+			position: absolute;
+			left: 31%;
+			top: 31%;
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0 2px #666;
+			background: #fe9b00;
+		}
+
+		.snail-body {
+			position: relative;
+			left: -50px;
+			width: 50px;
+			height: 100px;
+		}
+		.snail-body:before {
+			content: '';
+			position: absolute;
+			top: 22px;
+			left: 14px;
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0 1px #000;
+		}
+		.snail-body:after {
+			content: '';
+			position: absolute;
+			top: 35px;
+			left: -20px;
+			width: 34px;
+			height: 34px;
+			border-radius: 50%;
+			box-shadow: 0px 0px 0 1px #000;
+		}
+		.snail-tail {
+			position: absolute;
+			width: 100px;
+			height: 20px;
+			background: #fef0bc;
+			border-top-left-radius: 60px 90px;
+			border-bottom-right-radius: 120px 90px;
+		}
+		.snail-tail:before {
+			content: '';
+			position: absolute;
+			top: -53px;
+			left: -19px;
+			width: 27px;
+			height: 80px;
+			background: #fef0bc;
+			border-top-left-radius: 90px 0px;
+			border-bottom-right-radius: 120px 0px;
+			border-top-right-radius: 120px 90px;
+			border-bottom-left-radius: 120px 90px;
+			-moz-transform: rotate(45deg);
+			-webkit-transform: rotate(140deg);
+			-o-transform: rotate(45deg);
+			-ms-transform: rotate(45deg);
+			transform: rotate(45deg);      
+		}
+	</style>
+</head>
+<body>
+	<div class="snail">
+		<div class="snail-body"></div>
+		<div class="snail-tail"></div>
+	</div>
+</body>
+</html>
