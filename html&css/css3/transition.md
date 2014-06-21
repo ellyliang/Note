@@ -25,6 +25,8 @@ transition是复合属性。PS：如下：
 
 5、cubic-bezier(该值允许你去自定义一个时间曲线)
 
+6、ease-in-out(加速然后减速)
+
 ###语法
 
 ```css
