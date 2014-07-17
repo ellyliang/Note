@@ -1,0 +1,42 @@
+```html
+  npm install harp -g
+```
+
+不想用Apache的话，可以用这个命令
+
+启动如下：
+
+```js
+ harp server
+```
+
+
+笔记二：
+
+grunt livereload + chrome reload插件
+
+```js
+  module.exports = function(grunt) {
+      // 项目配置(任务配置)
+      grunt.initConfig({
+          pkg: grunt.file.readJSON('package.json'),
+          watch: {
+              client: {
+                  files: ['*.html', 'css/*', 'js/*', 'images/**/*'],
+                  options: {
+                      livereload: true
+                  }
+              }
+          }
+      });
+   
+      // 加载插件
+      grunt.loadNpmTasks('grunt-contrib-watch');
+   
+      // 自定义任务
+      grunt.registerTask('live', ['watch']);
+   
+  };
+```
+
+连接： http://www.bluesdream.com/blog/grunt-plugin-livereload-wysiwyg-editor.html
