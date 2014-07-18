@@ -41,4 +41,6 @@ grunt livereload + chrome reload插件
   };
 ```
 
+NOTE: livereload需要在服务器上运行，因为对file://支持不是很好。
+
 连接： http://www.bluesdream.com/blog/grunt-plugin-livereload-wysiwyg-editor.html
