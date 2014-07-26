@@ -1,4 +1,4 @@
-CSS如何实现无论Content高度多少footer都在底部
+CSS实现无论Content高度多少footer都在底部
 ============================================
 
 原理很简单，就是让Content的min-height为100%，然后footer的margin-top为负footer的高度。
