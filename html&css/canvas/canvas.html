@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas极客教程</title>
+</head>
+<body>
+	<canvas id="gbCanvas" width="300" height="400"></canvas>
+
+	<script>
+		var canvas = document.getElementById('gbCanvas'),
+			context = canvas.getContext('2d');
+
+			context.beginPath();
+			context.moveTo(100, 70);
+			context.lineTo(300, 70);
+			context.lineWidth = 25;
+			context.strokeStyle = 'red';
+			context.lineCap = 'butt';
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(100, 140);
+			context.lineTo(300, 70);
+			context.lineWidth = 25;
+			context.strokeStyle = 'green';
+			context.lineCap = 'round';
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(100, 210);
+			context.lineTo(300, 70);
+			context.lineWidth = 25;
+			context.strokeStyle = 'yellow';
+			context.lineCap = 'square';
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(70, 100);
+			context.lineTo(70, 300);
+			context.lineWidth = 25;
+			context.strokeStyle = 'red';
+			context.lineCap = 'butt';
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(100, 140);
+			context.lineTo(70, 300);
+			context.lineWidth = 25;
+			context.strokeStyle = 'green';
+			context.lineCap = 'round';
+			context.stroke();
+
+			context.beginPath();
+			context.moveTo(210, 100);
+			context.lineTo(70, 300);
+			context.lineWidth = 25;
+			context.strokeStyle = 'yellow';
+			context.lineCap = 'square';
+			context.stroke();
+	</script>
+</body>
+</html>
