@@ -94,7 +94,7 @@ HTML5  `<nav>`和媒体查询对IE8及以下版本不支持。因此需要引入
 ###响应式（Responsive）
 来到了教程的有趣部分-用媒体查询制作响应式菜单！如果你对响应式设计不熟悉，可以看我之前写关于[responsive design](http://webdesignerwall.com/tutorials/responsive-design-in-3-steps)和[media query](http://webdesignerwall.com/tutorials/css3-media-queries)的文章。
 
-大约600px断点的时候，设置nav元素为相对定位（position:relative），`<ul>`元素设置为绝对定位（`position:absolute`），将`<ul>`菜单列表放置顶部(top)。然后将所有`<li>`元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让<li>显示。然后鼠标放上或离开（hover）`nav`标签的时候，设置所有`<li>`为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
+大约600px断点的时候，设置nav元素为相对定位（position:relative），`<ul>`元素设置为绝对定位（`position:absolute`），将`<ul>`菜单列表放置顶部(top)。然后将所有`<li>`元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让`<li>`显示。然后鼠标放上或离开（hover）`nav`标签的时候，设置所有`<li>`为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
 
 > [demo展示](http://webdesignerwall.com/demo/responsive-menu/)
 
