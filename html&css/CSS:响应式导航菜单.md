@@ -32,7 +32,7 @@ CSS:响应式导航菜单
 
 ###CSS
 
-导航的css样式（PC端）是非常简单的，所以我（原文作者）不打算进入细节。注意，我（原文作者）将nav中的<li>元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置<ul>标签的`text-align`的属性。
+导航的css样式（PC端）是非常简单的，所以我（原文作者）不打算进入细节。注意，我（原文作者）将nav中的<li>元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置`<ul>`标签的`text-align`的属性。
 
 ```css
 /* nav */
@@ -82,7 +82,7 @@ CSS:响应式导航菜单
 ```
 ###支持Internet Explorer
 
-HTML5 ｀<nav>｀和媒体查询对IE8及以下版本不支持。因此需要引入[css3-mediaqueries.js](https://code.google.com/p/css3-mediaqueries-js/)（或[respond.js](https://github.com/scottjehl/Respond)）和[html5shim.js](https://code.google.com/p/html5shim/)。如果你不想引入html5shim.js，可以用`div`标签代替`nav`标签。
+HTML5  `<nav>`和媒体查询对IE8及以下版本不支持。因此需要引入[css3-mediaqueries.js](https://code.google.com/p/css3-mediaqueries-js/)（或[respond.js](https://github.com/scottjehl/Respond)）和[html5shim.js](https://code.google.com/p/html5shim/)。如果你不想引入html5shim.js，可以用`div`标签代替`nav`标签。
 
 ```html
 <!--[if lt IE 9]>
@@ -92,9 +92,9 @@ HTML5 ｀<nav>｀和媒体查询对IE8及以下版本不支持。因此需要引
 ```
 
 ###响应式（Responsive）
-来到了教程的有趣部分－用媒体查询制作响应式菜单！如果你对响应式设计不熟悉，可以看我之前写关于[responsive design](http://webdesignerwall.com/tutorials/responsive-design-in-3-steps)和[media query](http://webdesignerwall.com/tutorials/css3-media-queries)的文章。
+来到了教程的有趣部分-用媒体查询制作响应式菜单！如果你对响应式设计不熟悉，可以看我之前写关于[responsive design](http://webdesignerwall.com/tutorials/responsive-design-in-3-steps)和[media query](http://webdesignerwall.com/tutorials/css3-media-queries)的文章。
 
-大约600px断点的时候，设置nav元素为相对定位（position:relative），<ul>元素设置为绝对定位（position:absolute），将<ul>菜单列表放置顶部(top)。然后将所有<li>元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让<li>显示。然后鼠标放上或离开（hover）nav标签的时候，设置所有<li>为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
+大约600px断点的时候，设置nav元素为相对定位（position:relative），<ul>元素设置为绝对定位（position:absolute），将<ul>菜单列表放置顶部(top)。然后将所有<li>元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让<li>显示。然后鼠标放上或离开（hover）nav标签的时候，设置所有`<li>`为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
 
 [demo展示](http://webdesignerwall.com/demo/responsive-menu/)
 
