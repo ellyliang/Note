@@ -1,7 +1,7 @@
 CSS:响应式导航菜单
 =================
 
-之前我（原文作者）已经写过关于如何制作响应式设计的[mobile navigation ](http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial)手机导航的教程，但现在我发现一个新的技术，不用javascript去制作响应式菜单。它使用了简洁和语义化的html5标签。菜单可以向左，中间或右对齐。不像之前的教程，只能点击切换，现在这个菜单鼠标放上去切换显得用户体验更友好些。它还有一个指示去说明选中的菜单选项。它还可以在所有移动端和包括IE在内的桌面浏览器中运行。
+之前我（原文作者）已经写过一篇关于如何制作响应式设计[手机导航 ](http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial)的教程，但现在我发现一个新的制作导航方法，不需要使用javascript去制作响应式菜单，只需要用css实现。它使用了简洁和语义化的html5标签。菜单可以向左，中间或右对齐。不像之前的教程，只能点击切换，现在这个菜单鼠标放上去切换显得用户体验更友好些。它还有一个指示去说明选中的菜单选项，还可以在所有移动端与包括IE在内的桌面浏览器中运行。
 
 > [响应式菜单demo](http://webdesignerwall.com/demo/responsive-menu/)
 
@@ -16,7 +16,7 @@ CSS:响应式导航菜单
 
 ###导航的html标签
 
-这个是导航的标签。<nav>这个标签是创建下拉菜单的，同时需要给这个标签绝对定位的属性。我将在教程的最后说明这个标签。`.current`这个class是指选中的菜单选项。
+这个是导航的标签。`<nav>`这个标签是创建下拉菜单的，同时需要给这个标签绝对定位的属性。我将在教程的最后说明这个标签。`.current`这个class是指选中的菜单选项。
 
 ```html
 <nav class="nav">
@@ -32,7 +32,7 @@ CSS:响应式导航菜单
 
 ###CSS
 
-导航的css样式（PC端）是非常简单的，所以我（原文作者）不打算进入细节。注意，我（原文作者）将`nav`中的`<li>`元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置`<ul>`标签的`text-align`的属性。
+导航的css现实（PC端）非常简单，所以我（原文作者）不打算进入细节。注意，我（原文作者）将`nav`中的`<li>`元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置`<ul>`标签的`text-align`的属性。
 
 ```css
 /* nav */
@@ -92,9 +92,9 @@ HTML5  `<nav>`和媒体查询对IE8及以下版本不支持。因此需要引入
 ```
 
 ###响应式（Responsive）
-来到了教程的有趣部分-用媒体查询制作响应式菜单！如果你对响应式设计不熟悉，可以看我之前写关于[responsive design](http://webdesignerwall.com/tutorials/responsive-design-in-3-steps)和[media query](http://webdesignerwall.com/tutorials/css3-media-queries)的文章。
+终于来到本教程最有趣的部分-用媒体查询制作响应式菜单！如果你对响应式设计不熟悉，可以看我之前写关于[responsive design](http://webdesignerwall.com/tutorials/responsive-design-in-3-steps)和[media query](http://webdesignerwall.com/tutorials/css3-media-queries)的文章。
 
-大约600px断点的时候，设置nav元素为相对定位（position:relative），`<ul>`元素设置为绝对定位（`position:absolute`），将`<ul>`菜单列表放置顶部(top)。然后将所有`<li>`元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让`<li>`显示。然后鼠标放上或离开（hover）`nav`标签的时候，设置所有`<li>`为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
+大约600px临界点的时候，设置nav元素为相对定位（position:relative），`<ul>`元素设置为绝对定位（`position:absolute`），将`<ul>`菜单列表放置顶部(top)。然后将所有`<li>`元素设置为`display:none`隐藏掉，但通过`.current`的属性设置为`display:block`来让`<li>`显示。然后鼠标放上或离开（hover）`nav`标签的时候，设置所有`<li>`为`display:block`（这是产生下拉菜单的结果）。我在`.current`元素上增加一个确认的图形icon去指示选中项。为了菜单能够向中间和右对齐，使用`left`和`right`属性去定位`<ul>`列表。
 
 > [demo展示](http://webdesignerwall.com/demo/responsive-menu/)
 
