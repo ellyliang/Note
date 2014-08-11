@@ -1,7 +1,7 @@
 CSS:响应式导航菜单
 =================
 
-之前我（原文作者）已经写过关于如何制作响应式设计的[http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial](http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial)手机导航的教程，但现在我发现一个新的技术，不用javascript去制作响应式菜单。它使用了简洁和语义化的html5标签。菜单可以向左，中间或右对齐。不像之前的教程，只能点击切换，现在这个菜单鼠标放上去切换显得用户体验更友好些。它还有一个指示去说明选中的菜单选项。它还可以在所有移动端和包括IE在内的桌面浏览器中运行。
+之前我（原文作者）已经写过关于如何制作响应式设计的[mobile navigation ](http://webdesignerwall.com/tutorials/mobile-navigation-design-tutorial)手机导航的教程，但现在我发现一个新的技术，不用javascript去制作响应式菜单。它使用了简洁和语义化的html5标签。菜单可以向左，中间或右对齐。不像之前的教程，只能点击切换，现在这个菜单鼠标放上去切换显得用户体验更友好些。它还有一个指示去说明选中的菜单选项。它还可以在所有移动端和包括IE在内的桌面浏览器中运行。
 
 > [响应式菜单demo](http://webdesignerwall.com/demo/responsive-menu/)
 
