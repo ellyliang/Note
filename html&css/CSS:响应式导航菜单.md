@@ -32,7 +32,7 @@ CSS:响应式导航菜单
 
 ###CSS
 
-导航的css现实（PC端）非常简单，所以我（原文作者）不打算进入细节。注意，我（原文作者）将`nav`中的`<li>`元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置`<ul>`标签的`text-align`的属性。
+导航的css实现（PC端）非常简单，所以我（原文作者）不打算进入细节。注意，我（原文作者）将`nav`中的`<li>`元素的浮动`float:left`用`display:inline-block`代替。因为这样做允许菜单的按钮能够向左，中间或右对齐，通过设置`<ul>`标签的`text-align`的属性。
 
 ```css
 /* nav */
