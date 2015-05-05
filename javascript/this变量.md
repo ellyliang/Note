@@ -57,3 +57,30 @@ apply(改变后的调用这个函数的对象) this指向的是第一个参数
  obj.m.apply(); //apply为空的时候指向的是全局对象，x为0
  obj.m.apply(obj); //1
 ```
+
+> 对象原型链上的this
+
+```js
+var o = {
+  f : function() {
+   return this.a + this.b;
+  }
+};
+var p = Object.create(o);
+p.a = 1;
+p.b = 4;
+console.log(p.f()); //5
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
