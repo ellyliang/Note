@@ -2,6 +2,8 @@
 
 [淘宝](https://github.com/amfe/article/issues/8)
 
+[web app变革之rem](http://isux.tencent.com/web-app-rem.html)
+
 ```css
   html {
     font-size: 10px;
