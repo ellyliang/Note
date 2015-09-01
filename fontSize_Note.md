@@ -1,6 +1,6 @@
 ### REM
 
-```html
+```css
   html {
     font-size: 62.5%; /* 10/16*100%=62.5% (10px)*/
     /*默认为16px, font-size:100%;*/
