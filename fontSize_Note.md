@@ -21,13 +21,13 @@
     /* iphone6 */
     @media (min-width:340px) and (max-width: 413px){
       html{
-        font-size:8.8px;
+        font-size: 55%;
       }
     }
     /* iphone5 */
     @media (max-width: 339px){
       html{
-          font-size: 7.6px;
+          font-size: 47.6%;
       }
     }
   
