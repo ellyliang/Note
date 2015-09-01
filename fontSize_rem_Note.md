@@ -2,11 +2,11 @@
 
 ```css
   html {
-    font-size: 62.5%; /* 10/16*100%=62.5% (10px)*/
+    font-size: 10px;
     /*默认为16px, font-size:100%;*/
   }
   body {
-    font-size: 1.4rem; /* 14px/10px=1.4rem */
+    font-size: 1.2rem; /* 12px/10px=1.2rem */
   }
   h1 {
     font-size: 2.4rem;
@@ -16,22 +16,26 @@
     /* iphone4 */
     @media (min-width:414px){
       html{
-        font-size: 62.5%;
+        font-size: 10px;
       }
     /* iphone6 */
     @media (min-width:340px) and (max-width: 413px){
       html{
-        font-size: 55%;
+        font-size: 8.8px;
       }
     }
     /* iphone5 */
     @media (max-width: 339px){
       html{
-          font-size: 47.6%;
+          font-size: 7.6px;
       }
     }
   
 ```
+
+### rem bug文章
+
+[西门后花园](http://ons.me/490.html)
 
 ### js实现字体缩放
 [请自行翻墙](http://jsbin.com/yipeqiseyi/1/edit?html,output)
