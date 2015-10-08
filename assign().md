@@ -52,6 +52,6 @@ function key(source) {
     return keys;
 }
 
-var assign = createAssigner(key, 2);
+var assign = createAssigner(key);
 assign({e:3}, {'b': 1, 'c':2, 'd':3});
 ```
