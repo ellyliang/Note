@@ -75,7 +75,9 @@ brew安装watchman,flow
 #### 目前学习的资料
 
 [react native中文](http://wiki.jikexueyuan.com/project/react-native/GettingStarted.html)
+
 [深入浅出react native](http://zhuanlan.zhihu.com/FrontendMagazine/19996445)
+
 [javascript es6入门](http://es6.ruanyifeng.com/#docs/object)
 
 当然，我学习这些的时候，一定不能把基础漏掉，我要进行之前的计划，学习underscore源码，学习Javascript基础！自己加油！！！
