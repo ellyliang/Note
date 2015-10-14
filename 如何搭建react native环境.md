@@ -72,7 +72,13 @@ brew安装watchman,flow
 
 好了，我的笔记完毕，当然，在配react native开发环境的时候遇到了很多问题，有点模糊，但是，升级了iOS系统之后，突然所有东西都没了，然后我就按里边的步骤去执行，保证node升级到了4.0，之后就遇到的问题少了，这2个问题是我印象比较深刻的。遇到问题的时候，一定要看清楚问题，然后google下，就会解决的。我那么笨都可以，你更可以的！
 
+#### 目前学习的资料
 
+[react native中文](http://wiki.jikexueyuan.com/project/react-native/GettingStarted.html)
+[深入浅出react native](http://zhuanlan.zhihu.com/FrontendMagazine/19996445)
+[javascript es6入门](http://es6.ruanyifeng.com/#docs/object)
+
+当然，我学习这些的时候，一定不能把基础漏掉，我要进行之前的计划，学习underscore源码，学习Javascript基础！自己加油！！！
 
 
 
