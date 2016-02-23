@@ -145,7 +145,7 @@ TeslaModelS.prototype = function() {
 }();
 ```
 
-3.观察者设计模式(Observer Design Pattern)
+####3.观察者设计模式(Observer Design Pattern)
 
 * 优点：观察者和被观察者是抽象耦合的；建立一套触发机制。
 * 缺点：大量的观察者增加，会很耗性能；
