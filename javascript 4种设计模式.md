@@ -145,6 +145,22 @@ TeslaModelS.prototype = function() {
 }();
 ```
 
+3.观察者设计模式(Observer Design Pattern)
+
+* 优点：观察者和被观察者是抽象耦合的；建立一套触发机制。
+* 缺点：大量的观察者增加，会很耗性能；
+* 适用场景：有多个子类共有的方法，且逻辑相同；重要的、复杂的方法，可以考虑作为模板方法
+
+```js
+$scope.$on('nameChanged', function(event, args) {
+  $scope.name = args.name;
+}); 
+
+$scope.userNameChanged = function(name) {
+  $scope.$emit('nameChanged', {name: name});
+};
+```
+
 
 [一天一个模式笔记！](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
 
