@@ -4,7 +4,9 @@
 前奏完成后，通过`react-native init Hello`,然后启动xcode,打开项目。本应该很兴奋看到页面，结果尼玛，报错了，以下是我遇到的2个问题的笔记
 
 
+![reactNativeError01](/reactNativeError01.jpg);
 
+![reactNativeError02](/reactNativeError02.jpg);
 
 
 
